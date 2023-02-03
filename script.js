@@ -1,7 +1,18 @@
+function setAnimanation(input) {
+    document.querySelector("." + input).classList.add("pressed");
+    setTimeout(function () {
+        document.querySelector("." + input).classList.remove("pressed");
+    }, 100)
+}
+
+
+
+
 document.addEventListener("keydown", lal);
 
 function lal(event) {
     makeSound(event.key);
+    setAnimanation(event.key);
 }
 
 
@@ -14,6 +25,7 @@ function handleclick() {
     let buttonClicked = this.innerHTML;
 
     makeSound(buttonClicked);
+    setAnimanation(buttonClicked);
 }
 function makeSound (char) {
       switch (char) {
